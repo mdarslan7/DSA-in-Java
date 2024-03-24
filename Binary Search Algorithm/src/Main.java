@@ -1,7 +1,7 @@
 public class Main {
     public static void main(String[] args) {
         int[] arr = {-12, -7, -4, 0, 6, 9, 15, 31};
-        int target = 90;
+        int target = 9;
         int searchedIndex = binarySearch(arr, target);
         System.out.println("Index: " + searchedIndex);
     }
