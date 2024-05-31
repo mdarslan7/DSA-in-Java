@@ -1,11 +1,16 @@
+import java.util.Arrays;
+
 public class SortedMatrix {
     public static void main(String[] args) {
         int[][] matrix = {
-                {1, 2},
-                {3, 4}
+                {1, 2, 3},
+                {4, 5, 6},
+                {7, 8, 9}
         };
 
-        int target = 3;
+        int target = 4;
+
+        System.out.println(Arrays.toString(search(matrix, target)));
     }
 
     static int[] search(int[][] matrix, int target) {
@@ -49,23 +54,23 @@ public class SortedMatrix {
         //now four cases:
         //searching in first half
         if(target <= matrix[rStart][cMid - 1]) {
-            return binarySearch(matrix, rStart, 0, cMid-1, target);
+            return binarySearch(matrix, rStart, 0, cMid - 1, target);
         }
 
         //searching in second half
-        //in right side
-        if(target >= matrix[rStart][cMid + 1]) {
-
+        //in right side, need to add a check if it lies between cMid + 1 and the last element
+        if(target >= matrix[rStart][cMid + 1] && target <= matrix[rStart][cols - 1]) {
+            return binarySearch(matrix, rStart, cMid + 1, cols - 1, target);
         }
 
         //searching in third half
         if(target <= matrix[rStart + 1][cMid - 1]) {
-
+            return binarySearch(matrix, rStart + 1, 0, cMid - 1, target);
         }
 
         //searching in fourth half
         else {
-
+            return binarySearch(matrix, rStart + 1, cMid + 1, cols - 1, target);
         }
     }
 
