@@ -1,7 +1,7 @@
 public class BinarySearch {
     public static void main(String[] args) {
-        int[] arr = {1, 2, 3, 45, 67, 76};
-        int target = 67;
+        int[] arr = {1, 2, 3, 4, 5, 6};
+        int target = 1;
         System.out.println(recursiveBinarySearch(arr, target, 0, arr.length-1));
     }
 
