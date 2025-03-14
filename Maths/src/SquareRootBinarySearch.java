@@ -15,8 +15,10 @@ public class SquareRootBinarySearch {
             int mid = s + (e - s) / 2;
             if(mid * mid == n)
                 return mid;
-            if(mid * mid > n)
+            if(mid * mid > n) {
                 e = mid - 1;
+                root = e;
+            }
             else
                 s = mid + 1;
         }
