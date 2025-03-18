@@ -2,7 +2,7 @@ package easy;
 
 public class ProdOfDigits {
     public static void main(String[] args) {
-        System.out.println(prodOfDigits(13402));
+        System.out.println(prodOfDigits(1340));
     }
 
     private static int prodOfDigits(int n) {
