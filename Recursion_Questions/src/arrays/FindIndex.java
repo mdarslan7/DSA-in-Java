@@ -8,7 +8,7 @@ public class FindIndex {
         int target = 4;
 
         ArrayList<Integer> ans = new ArrayList<>();
-        ans = findAllIndex(arr, target, 0, ans);
+        ans = findAllIndex2(arr, target, 0);
         System.out.println(ans);
     }
 
@@ -20,5 +20,21 @@ public class FindIndex {
             list.add(index);
 
         return findAllIndex(arr, target, index + 1, list);
+    }
+
+    static ArrayList<Integer> findAllIndex2(int[] arr, int target, int index) {
+        ArrayList<Integer> list = new ArrayList<>();
+
+        if(index == arr.length)
+            return list;
+
+        if(arr[index] == target)
+            list.add(index);
+
+        ArrayList<Integer> ansFromBelowCalls = findAllIndex2(arr, target, index + 1);
+
+        list.addAll(ansFromBelowCalls);
+
+        return list;
     }
 }
