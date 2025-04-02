@@ -2,7 +2,7 @@ package strings;
 
 import java.util.ArrayList;
 
-public class Subseq {
+public class SubSeq {
     public static void main(String[] args) {
         subSeq("", "abc");
         ArrayList<String> list = subSeqRet("", "abc");
