@@ -2,8 +2,9 @@ package strings;
 
 public class Stream {
     public static void main(String[] args) {
-        skip("baccadh", "");
-        System.out.println(skip("baccadhewawae"));
+//        skip("baccadh", "");
+//        System.out.println(skip("baccadhewawae"));
+        System.out.println(skipApple("baccdhapplehsbg"));
     }
 
     static void skip(String str, String ans) {
@@ -31,5 +32,18 @@ public class Stream {
             return skip(str.substring(1));
         else
             return ch + skip(str.substring(1));
+    }
+
+    static String skipApple(String str) {
+        if(str.isEmpty()) {
+            return "";
+        }
+
+        char ch = str.charAt(0);
+
+        if(str.startsWith("apple"))
+            return skipApple(str.substring(5));
+        else
+            return ch + skipApple(str.substring(1));
     }
 }
