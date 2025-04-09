@@ -4,10 +4,11 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
-public class SubSet {
+// subset using iteration
+public class Subset {
     public static void main(String[] args) {
         int[] arr = {1, 2, 3};
-        List<List<Integer>> ans = subSetDuplicates(arr);
+        List<List<Integer>> ans = subSet(arr);
         for(List<Integer> list : ans) {
             System.out.println(list);
         }
@@ -48,9 +49,6 @@ public class SubSet {
                 outer.add(internal);
             }
         }
-
         return outer;
     }
-
-
 }
