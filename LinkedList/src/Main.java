@@ -8,7 +8,8 @@ public class Main {
         list.insertAtEnd(15);
         list.insertAtAnIndex(17, 4);
         list.display();
-        list.deleteFromBeginning();
+        list.deleteAtAnIndex(3);
         list.display();
+        System.out.println(list.find(8));
     }
 }

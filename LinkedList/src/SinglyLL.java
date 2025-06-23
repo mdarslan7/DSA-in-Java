@@ -39,7 +39,7 @@ public class SinglyLL {
             return;
         }
 
-        if(index == size) {
+        if(index == size - 1) {
             insertAtEnd(val);
             return;
         }
@@ -64,7 +64,62 @@ public class SinglyLL {
         head = head.next;
         if(head == null)
             tail = null;
+        size--;
         System.out.println(val);
+    }
+
+    public void deleteFromEnd() {
+        if(size <= 1) {
+            deleteFromBeginning();
+            return;
+        }
+        Node secondNode = get(size - 2);
+        int val = tail.value;
+        tail = secondNode;
+        tail.next = null;
+        size--;
+        System.out.println(val);
+    }
+
+    public void deleteAtAnIndex(int index) {
+        if (index < 0 || index > size) {
+            throw new IndexOutOfBoundsException("Invalid index " + index);
+        }
+
+        if(index == 0) {
+            deleteFromBeginning();
+            return;
+        }
+
+        if(index == size - 1) {
+            deleteFromEnd();
+            return;
+        }
+
+        Node prev = get(index - 1);
+        int val = prev.next.value;
+        prev.next = prev.next.next;
+
+        System.out.println(val);
+    }
+
+    public Node find(int value) {
+        Node node = head;
+        while(node != null) {
+            if(node.value == value)
+                return node;
+            node = node.next;
+        }
+        return null;
+    }
+
+    //function to return node object at a particular index
+    public Node get(int index) {
+        Node node = head;
+        for(int i=0; i<index; i++) {
+            node = node.next;
+        }
+        return node;
     }
 
     public void display() {
