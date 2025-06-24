@@ -1,5 +1,6 @@
 public class Main {
     public static void main(String[] args) {
+        //Single LinkedList
 //        SinglyLL list = new SinglyLL();
 //        list.insertAtBeginning(2);
 //        list.insertAtBeginning(4);
@@ -12,14 +13,25 @@ public class Main {
 //        list.display();
 //        System.out.println(list.find(8));
 
-        DoublyLL list = new DoublyLL();
-        list.insertAtBeginning(14);
-        list.insertAtBeginning(25);
-        list.insertAtBeginning(12);
-        list.insertAtBeginning(56);
-        list.insertAtEnd(43);
+        //Doubly LinkedList
+//        DoublyLL list = new DoublyLL();
+//        list.insertAtBeginning(14);
+//        list.insertAtBeginning(25);
+//        list.insertAtBeginning(12);
+//        list.insertAtBeginning(56);
+//        list.insertAtEnd(43);
+//        list.display();
+//        list.insertAfterAValue(12, 1);
+//        list.display();
+
+        //Circular LinkedList
+        CircularLL list = new CircularLL();
+        list.insert(23);
+        list.insert(54);
+        list.insert(32);
+        list.insert(12);
         list.display();
-        list.insertAfterAValue(12, 1);
+        list.delete(23);
         list.display();
     }
 }
