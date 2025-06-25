@@ -6,6 +6,22 @@ public class SinglyLL {
         this.size = 0;
     }
 
+    //insert in linked list using recursion
+    public void insertRev(int val, int index) {
+        head = insertRev(val, index, head);
+    }
+
+    public Node insertRev(int val, int index, Node node) {
+        if(index == 0) {
+            Node temp = new Node(val, node);
+            size++;
+            return temp;
+        }
+
+        node.next = insertRev(val, index-1, node.next);
+        return node;
+    }
+
     public void insertAtBeginning(int val) {
         Node node = new Node(val);
         node.next = head;
