@@ -13,6 +13,8 @@ public class Main {
         list.display();
         list.insertRev(11, 3);
         list.display();
+        list.bubbleSort();
+        list.display();
 
         //Doubly LinkedList
 //        DoublyLL list = new DoublyLL();
