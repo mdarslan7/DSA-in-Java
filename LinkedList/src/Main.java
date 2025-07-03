@@ -15,6 +15,8 @@ public class Main {
         list.display();
         list.bubbleSort();
         list.display();
+        list.reverse();
+        list.display();
 
         //Doubly LinkedList
 //        DoublyLL list = new DoublyLL();

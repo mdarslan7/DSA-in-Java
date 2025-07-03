@@ -168,6 +168,23 @@ public class SinglyLL {
         }
     }
 
+    public void reverse() {
+        if (head == null || head.next == null) return;  // empty or 1-element list: nothing to do
+        reverse(head);  // start reversing from head
+    }
+
+    private void reverse(Node node) {
+        if(node == tail) {
+            head = tail;
+            return;
+        }
+
+        reverse(node.next);
+        tail.next = node;
+        tail = node;
+        tail.next = null;
+    }
+
     //function to return node object at a particular index
     public Node get(int index) {
         Node node = head;
