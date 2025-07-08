@@ -1,6 +1,4 @@
-import java.util.LinkedList;
-import java.util.Queue;
-import java.util.Stack;
+import java.util.*;
 
 public class InBuiltExamples {
     public static void main(String[] args) {
@@ -19,19 +17,31 @@ public class InBuiltExamples {
 //        System.out.println(stack.pop());
 
         //Queue
-        Queue<Integer> q = new LinkedList<>();
-        q.add(23);
-        q.add(53);
-        q.add(65);
-        q.add(67);
-        q.add(98);
+//        Queue<Integer> q = new LinkedList<>();
+//        q.add(23);
+//        q.add(53);
+//        q.add(65);
+//        q.add(67);
+//        q.add(98);
+//
+//        System.out.println(q.peek());
+//
+//        System.out.println(q.remove());
+//        System.out.println(q.remove());
+//        System.out.println(q.remove());
+//        System.out.println(q.remove());
+//        System.out.println(q.remove());
 
-        System.out.println(q.peek());
+        //Deque
+        Deque<Integer> deque = new ArrayDeque<>();
+        deque.add(23);
+        deque.addFirst(31);
+        deque.addLast(65);
+        deque.add(71);
 
-        System.out.println(q.remove());
-        System.out.println(q.remove());
-        System.out.println(q.remove());
-        System.out.println(q.remove());
-        System.out.println(q.remove());
+        System.out.println(deque.removeFirst());
+        System.out.println(deque.removeFirst());
+        System.out.println(deque.removeFirst());
+        System.out.println(deque.removeFirst());
     }
 }
