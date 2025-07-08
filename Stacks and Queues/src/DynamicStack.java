@@ -8,7 +8,7 @@ public class DynamicStack extends CustomStack {
     }
 
     @Override
-    public boolean push(int item) {
+    public boolean push(int item) throws StackException {
         if(this.isFull()) {
             //double the array size
             int[] temp = new int[data.length * 2];

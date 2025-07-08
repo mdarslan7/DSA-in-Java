@@ -19,9 +19,9 @@ public class CustomStack {
         return ptr == -1;
     }
 
-    public boolean push(int item) {
+    public boolean push(int item) throws StackException {
         if(isFull())
-            return false;
+            throw new StackException("Cannot push into a full stack");
 
         ptr += 1;
         data[ptr] = item;
@@ -37,7 +37,7 @@ public class CustomStack {
 
     public int peek() throws StackException {
         if(isEmpty())
-            throw new StackException("Cannot pop from an empty stack!");
+            throw new StackException("Cannot peek an empty stack!");
 
         return data[ptr];
     }

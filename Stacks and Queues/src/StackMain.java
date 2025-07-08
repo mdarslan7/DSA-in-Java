@@ -15,7 +15,7 @@ public class StackMain {
 //        System.out.println(stack.pop());
 //        System.out.println(stack.pop());
 
-        DynamicStack stack = new DynamicStack(5);
+        CustomStack stack = new DynamicStack(5);
 
         stack.push(23);
         stack.push(34);
@@ -28,7 +28,8 @@ public class StackMain {
         stack.push(24);
         stack.push(87);
 
-        System.out.println(stack.pop());
+        //stack wont get full in dynamic queue
+
         System.out.println(stack.pop());
         System.out.println(stack.pop());
         System.out.println(stack.pop());
