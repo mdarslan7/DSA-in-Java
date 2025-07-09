@@ -1,20 +1,22 @@
-public class CustomQueue {
+public class CircularQueue {
     protected int[] data;
     private static final int DEFAULT_SIZE = 10;
     int end = 0;
-    public CustomQueue() {
+    int front = 0;
+    int size = 0;
+    public CircularQueue() {
         this(DEFAULT_SIZE);
     }
-    public CustomQueue(int size) {
+    public CircularQueue(int size) {
         this.data = new int[size];
     }
 
     public boolean isFull() {
-        return end == data.length;
+        return size == data.length;
     }
 
     public boolean isEmpty() {
-        return end == 0;
+        return size == 0;
     }
 
     public boolean insert(int item) {
@@ -22,6 +24,8 @@ public class CustomQueue {
             return false;
 
         data[end++] = item;
+        end = end % data.length;
+        size++;
         return true;
     }
 
@@ -29,14 +33,9 @@ public class CustomQueue {
         if(isEmpty())
             throw new Exception("Cannot remove from an empty Queue!");
 
-        int removed = data[0];
-
-        //shift the elements
-        for(int i=1; i<end; i++) {
-            data[i-1] = data[i];
-        }
-
-        end--;
+        int removed = data[front++];
+        front = front % data.length;
+        size--;
         return removed;
     }
 
@@ -44,13 +43,19 @@ public class CustomQueue {
         if(isEmpty())
             throw new Exception("Cannot remove from an empty Queue!");
 
-        return data[0];
+        return data[front];
     }
 
-    public void display() {
-        for(int i=0; i<data.length; i++) {
-            System.out.print(data[i] + " <- ");
-        }
+    public void display() throws Exception {
+        if(isEmpty())
+            throw new Exception("Cannot remove from an empty Queue!");
+
+        int i = front;
+        do {
+            System.out.print(data[i] + " -> ");
+            i++;
+            i %= data.length;
+        } while(i != end);
         System.out.println("END");
     }
 }
