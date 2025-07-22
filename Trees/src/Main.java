@@ -13,5 +13,10 @@ public class Main {
         int[] arr = {1, 2, 3};
         tree.populate(arr);
         tree.display();
+        tree.preOrder();
+        System.out.println();
+        tree.inOrder();
+        System.out.println();
+        tree.postOrder();
     }
 }
