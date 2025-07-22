@@ -1,9 +1,17 @@
-import java.util.Scanner;
+//import java.util.Scanner;
 public class Main {
     public static void main(String[] args) {
-        BinaryTree tree = new BinaryTree();
-        Scanner sc = new Scanner(System.in);
-        tree.populate(sc);
-        tree.prettyDisplay();
+        //Binary Tree
+
+//        BinaryTree tree = new BinaryTree();
+//        Scanner sc = new Scanner(System.in);
+//        tree.populate(sc);
+//        tree.prettyDisplay();
+
+        //BST
+        BST tree = new BST();
+        int[] arr = {1, 2, 3};
+        tree.populate(arr);
+        tree.display();
     }
 }
