@@ -1,1 +1,1 @@
-Do you think we can reach AGI in this decade?
+I was replaced by BufferWriter with the help of FileWriter
